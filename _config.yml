@@ -2,10 +2,8 @@
 title: miscellany
 tagline: brain dump
 name: larra
-author_bio: > 
-developer, girl, overthinker
-footer_description: >
-A digital garden of my brain dumps, notes, journals, and other stuff.
+author_bio: > developer, girl, overthinker
+footer_description: > A digital garden of my brain dumps, notes, journals, and other stuff.
 notes_url: /notes
 profile_pic:
 favicon: /assets/img/favicon.png
