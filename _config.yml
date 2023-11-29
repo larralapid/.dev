@@ -1,51 +1,26 @@
 # Site Data
-title: miscellany
-tagline: brain dump
+title: brain dump
+tagline: miscellany, notes, thoughts.
 name: larra
-author_bio: >
-  developer, girl, overthinker
-footer_description: >
-  A digital garden of my brain dumps, notes, journals, and other stuff.
+author_bio: developer, girl, overthinker
+footer_description: digital garden
 notes_url: /notes
 profile_pic:
 favicon: /assets/img/favicon.png
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. https://example.com
 theme_color: white
-encoding: utf-8
 
-# Links and Social Media
-donate_link:
-repository:
-github:
-twitter:
-portfolio:
-email: larra@somastack.com
-
-# Build Settings
-theme: null
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-archives
-  - jekyll-minifier
-  - jekyll-toc
-  - jekyll-admin
-
-markdown: kramdown
-
-kramdown:
-  input: GFM
-  hard_wrap: false
-  math_engine: mathjax
-  smart_quotes: ["apos", "apos", "quot", "quot"]
-  syntax_highlighter: rouge
-
-sass:
-  style: compressed
-
-JEKYLL_ENV: "production"
-
+# Where things are
+#
+#
+layouts_dir: _layouts
+data_dir: _data
+includes_dir: _includes
+# source              : .
+# destination         : ./_site
+# collections_dir     : .
+# plugins_dir         : _plugins # takes an array of strings and loads plugins in that order
 collections:
   notes:
     output: true
@@ -57,6 +32,103 @@ collections:
     output: true
     permalink: /page/:name
 
+# Handling Reading
+#
+safe: false
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+# overrides your excluded items configuration and the default include array ([".htaccess"])
+include:
+  - .htaccess
+  - node_modules/uglifier/index.js
+encoding: UTF-8
+strict_front_matter: false
+# optional
+# keep_files          : [".git", ".svn"]
+
+# Filtering Content
+show_drafts: false
+limit_posts: 0
+future: false
+unpublished: false
+
+# Links and Social Media
+donate_link:
+repository:
+github:
+twitter:
+portfolio:
+email: larra@somastack.com
+
+# Build Settings
+theme: null
+sass:
+  style: compressed
+
+# Conversion
+highlighter: rouge
+lsi: false
+excerpt_separator: \n\n
+incremental: false
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  math_engine: mathjax
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+  syntax_highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-archives
+  - jekyll-minifier
+  - jekyll-toc
+  - jekyll-admin
+# whitelist : []
+jekyll-archives:
+  enabled: []
+  layout: default
+  permalinks:
+    year: "/:year/"
+    month: "/:year/:month/"
+    day: "/:year/:month/:day/"
+    tag: "/tag/:name/"
+    category: "/category/:name/"
+toc:
+  min_level: 1
+  max_level: 6
+  ordered_list: false
+  no_toc_section_class: no-toc
+  list_class: section-nav
+  sublist_class: ""
+  item_class: entry
+  item_prefix: toc-
+jekyll_admin:
+  hidden_links:
+    #- posts
+    #- pages
+    #- staticfiles
+    #- datafiles
+    #- configuration
+  homepage: "drafts"
+
+# Variables
+JEKYLL_ENV: "production"
+
+# front matter defaults
 defaults:
   - scope:
       path: ""
@@ -86,32 +158,7 @@ defaults:
       layout: page
       content-type: pages
 
-jekyll-archives:
-  enabled: []
-  layout: default
-  permalinks:
-    year: "/:year/"
-    month: "/:year/:month/"
-    day: "/:year/:month/:day/"
-    tag: "/tag/:name/"
-    category: "/category/:name/"
-
-toc:
-  min_level: 1
-  max_level: 6
-  ordered_list: false
-  no_toc_section_class: no-toc
-  list_class: section-nav
-  sublist_class: ""
-  item_class: entry
-  item_prefix: toc-
-
-# jekyll admin
-jekyll_admin:
-  hidden_links:
-    #- posts
-    #- pages
-    #- staticfiles
-    #- datafiles
-    #- configuration
-  homepage: "pages"
+liquid:
+  error_mode: warn
+  strict_filters: false
+  strict_variables: false

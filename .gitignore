@@ -103,3 +103,4 @@ tmp
 #####################
 .VimballRecord
 .netrwhist
+.dev.code-workspace
